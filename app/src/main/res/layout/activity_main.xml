@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_margin="@dimen/layout_margin"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <!--ll : horiztonal, for cards remaining et + shuffle new deck button -->
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@id/tv_cards_remaining"
+            android:text="@string/cards_remaining"
+            android:layout_alignParentLeft="true"
+            android:textSize="12sp"
+            android:gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@id/btn_shuffle_new_deck"
+            android:onClick="shuffleNewDeck"
+            android:text="@string/txt_btn_shuffle_new_deck"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/divider"
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="2dp" />
+    <!--ll : horiztonal, for draw cards et + display drawn cards button -->
+
+
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@id/et_draw_cards"
+            android:hint="@string/txt_draw_cards_user"
+            android:layout_alignParentLeft="true"
+            android:layout_width="wrap_content"
+            android:inputType="number"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@id/btn_display_drawn_cards"
+            android:onClick="drawDeck"
+            android:text="@string/txt_btn_display_cards"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@id/rv_user_cards"
+        android:animateLayoutChanges="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical">
+
+    </android.support.v7.widget.RecyclerView>
+
